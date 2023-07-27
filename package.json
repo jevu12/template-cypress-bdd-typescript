@@ -1,0 +1,47 @@
+{
+  "name": "template-cypress-bdd-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:open:prod": "cypress open --env version=prod",
+    "cy:open:stg": "cypress open --env version=stg",
+    "cy:run:prod": "cypress run --env version=prod",
+    "cy:run:stg": "cypress run --env version=stg",
+    "cy:run-chrome:prod": "cypress run --browser chrome --env version=prod",
+    "report": "node cucumber-html-report.js",
+    "report:open": "open ./cypress/reports/index.html",
+    "report:clean": "rm -rf cypress/reports/*",
+    "report:delete": "rm -rf cypress/reports/",
+    "report:generate:open": "npm run report && npm run report:open",
+    "report:delete:all": "rm -rf cypress/reports/* && rm -rf cypress/reports/"
+  },
+  "keywords": [
+    "cypres",
+    "cucumber",
+    "bdd",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cypress": "^12.17.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-xpath": "^2.0.1",
+    "multiple-cucumber-html-reporter": "^3.4.0",
+    "typescript": "^5.1.6"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/support/step_definitions/",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}

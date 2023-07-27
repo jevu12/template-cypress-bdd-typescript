@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "moduleResolution": "Node16",
+  },
+  "include": [
+    "cypress/**/*.ts",
+    "cypress/*.js",
+    "cypress/support/commands.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+}
