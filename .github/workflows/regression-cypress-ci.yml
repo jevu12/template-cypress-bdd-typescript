@@ -28,9 +28,9 @@ jobs:
 
       - name: install allure
         run: |
-          sudo apt-add-repository ppa:qameta/allure
-          sudo apt-get update
-          sudo apt-get install allure
+          curl -o allure-commandline.zip -L https://github.com/allure-framework/allure2/releases/download/2.20.1/allure-2.20.1.zip
+          unzip allure-commandline.zip -d /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
 
       - name: Install dependencies
         run: |
