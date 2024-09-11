@@ -30,11 +30,12 @@ jobs:
         run: |
           curl -o allure-commandline.zip -L https://github.com/allure-framework/allure2/releases/download/2.20.1/allure-2.20.1.zip
           unzip allure-commandline.zip -d /opt/allure
-          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+          sudo ln -s /opt/allure/allure-2.20.1/bin/allure /usr/bin/allure
 
       - name: Install dependencies
         run: |
           npm install
+          npm install -g allure-commandline --save-dev
 
       - name: Run tests and generate report
         run: |
