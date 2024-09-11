@@ -9,6 +9,8 @@ cypress/reports/*
 cypress/screenshots
 cypress/screenshots/*
 cypress/videos
+allure-report
+allure-results
 cypress/videos/*
 cypress/downloads
 cypress/downloads/*
