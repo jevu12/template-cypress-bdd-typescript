@@ -16,7 +16,11 @@
     "report:clean": "rm -rf cypress/reports/*",
     "report:delete": "rm -rf cypress/reports/",
     "report:generate:open": "npm run report && npm run report:open",
-    "report:delete:all": "rm -rf cypress/reports/* && rm -rf cypress/reports/"
+    "report:delete:all": "rm -rf cypress/reports/* && rm -rf cypress/reports/",
+    "pretest": "rimraf ./allure-report && rimraf ./allure-results",
+    "test": "npm run cy:run",
+    "posttest": "allure generate allure-results --clean -o allure-report",
+    "cy:run:allure": "npm run pretest && npm run test && npm run posttest"
   },
   "keywords": [
     "cypres",
@@ -28,10 +32,13 @@
   "license": "ISC",
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.2",
-    "cypress": "^12.17.0",
+    "@mmisty/cypress-allure-adapter": "^3.0.2",
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "cypress": "^13.14.2",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-xpath": "^2.0.1",
     "multiple-cucumber-html-reporter": "^3.4.0",
+    "rimraf": "^6.0.1",
     "typescript": "^5.1.6"
   },
   "cypress-cucumber-preprocessor": {
